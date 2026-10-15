@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Westchester ENT — Modern Glassmorphic Design System
+   ========================================================================== */
+
+:root {
+  --primary: #008796;
+  --primary-dark: #006874;
+  --primary-light: #e0f6f8;
+  --accent-cyan: #0284c7;
+  --accent-teal: #0d9488;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --bg-main: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-shadow: 0 20px 40px -15px rgba(0, 135, 150, 0.12), 0 0 1px 1px rgba(255, 255, 255, 0.9);
+  --dark-glass-bg: rgba(15, 23, 42, 0.94);
+  --dark-glass-border: rgba(255, 255, 255, 0.12);
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, Cambria, serif;
+}
+
+/* Base Links & Images */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ambient Background Mesh Gradient */
+.mesh-gradient-bg {
+  background-color: #f3f9fb;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(186, 230, 253, 0.45) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(204, 251, 241, 0.5) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(224, 242, 254, 0.35) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(224, 231, 255, 0.3) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Containers */
+.container-custom {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Glassmorphism Surfaces
+   ========================================================================== */
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-card-soft {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-soft:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 40px -10px rgba(0, 135, 150, 0.16), 0 4px 10px rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 150, 166, 0.25);
+}
+
+.dark-glass {
+  background: var(--dark-glass-bg);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--dark-glass-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================================================================
+   Typography & Accents
+   ========================================================================== */
+
+.gradient-text {
+  background: linear-gradient(135deg, #008796 0%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-dark {
+  background: linear-gradient(135deg, #38bdf8 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Pill Buttons */
+.btn-pill-primary {
+  background: linear-gradient(135deg, #0096a6 0%, #0284c7 100%);
+  color: #ffffff !important;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px -4px rgba(0, 150, 166, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-pill-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -4px rgba(0, 150, 166, 0.48);
+  background: linear-gradient(135deg, #00818e 0%, #0369a1 100%);
+}
+
+.btn-pill-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a !important;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-pill-secondary:hover {
+  background: #ffffff;
+  border-color: #0096a6;
+  color: #0096a6 !important;
+  transform: translateY(-2px);
+}
+
+/* Floating Quick Booking Bar */
+.quick-booking-bar {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  box-shadow: 0 24px 50px -10px rgba(0, 135, 150, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+/* Custom Input & Select styling */
+.glass-input {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.glass-input:focus {
+  border-color: #0096a6;
+  box-shadow: 0 0 0 3px rgba(0, 150, 166, 0.18);
+  background: #ffffff;
+}
+
+/* Marquee Banner */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulsing Badge Indicator */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseGreen 2s infinite;
+  display: inline-block;
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Carousel */
+.carousel-container {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Modal */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
