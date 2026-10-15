@@ -69,12 +69,18 @@ img {
 
 /* Containers */
 .container-custom {
-  max-width: 1240px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: clamp(1.25rem, 4vw, 4.5rem);
+  padding-right: clamp(1.25rem, 4vw, 4.5rem);
   width: 100%;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: clamp(1rem, 3vw, 3rem);
+  padding-right: clamp(1rem, 3vw, 3rem);
 }
 
 /* ==========================================================================
